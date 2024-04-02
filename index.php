@@ -71,6 +71,3 @@ require './db.php';
 </html>
 
 
-<!-- 
-<img src="..." class='card-img-top'>
- -->

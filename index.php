@@ -1,46 +1,8 @@
 <?php
 
-class Movie
-{
-    public $name;
-    public $playbill;
-    public $language;
-    public $genre = [];
-    public $duration;
-    public $description;
-    public $director;
 
-    function __construct($_name, $_language, $_description,$__playbill, $__genre)
-    {
-        $this->name = $_name;
-        $this->language = $_language;
-        $this->description = $_description;
-        $this->playbill = $__playbill;
-        $this->genre = $__genre;
-    }
 
-    public function maker(){
-        return $this->name;
-    }
-
-    public function type(){
-        $newGenre = join(" , ", $this->genre);
-        return $newGenre;
-        
-    }
-}
-
-$movie1 = new Movie("Ritorno al futuro", "Eng", "Marty McFly viaggia indietro nel tempo, sconvolgendo accidentalmente la sua stessa esistenza. Deve riparare il passato per garantirsi il futuro.","https://pad.mymovies.it/filmclub/2006/06/011/locandinapg5.jpg", array("sci-fi", "azione"));
-$movie2 = new Movie("Harry Potter", "Ita", "Un orfano scopre di essere un mago, frequenta la scuola di magia Hogwarts e sventa il piano di Lord Voldemort per ottenere la Pietra Filosofale.", "https://static.posters.cz/image/1300/poster/harry-potter-la-pietra-filosofale-i104639.jpg", array("fantasy", "azione"));
-$movie3 = new Movie("Dune- Parte Uno", "Eng", "Paul Atreides, erede di una potente famiglia, viaggia su Arrakis per estrarre una spezia preziosa. Affronta nemici e tradimenti per sopravvivere e realizzare il suo destino.", "https://m.media-amazon.com/images/I/61aBECo7a2L._AC_UF1000,1000_QL80_.jpg", array("sci-fy", "azione"));
-$movie4 = new Movie("American Beauty", "Eng", "Un uomo infelice riscopre la bellezza della vita attraverso l'amore di una giovane e l'amicizia di un vicino. Sfida le convenzioni sociali per raggiungere la vera felicità.", "https://pad.mymovies.it/filmclub/2002/08/166/locandina288.jpg", array("introspetivo", "romantico"));
-
-$movies = [
-    $movie1,
-    $movie2,
-    $movie3,
-    $movie4,
-];
+require './db.php';
 
 
 
@@ -81,6 +43,8 @@ $movies = [
                             <p class='card-text text-center'>Lingua: " . $movie->language . "</p>
                             <p >" . $movie->description . "</p>
                             <p > Genere: " . $movie->type() . ".</p>
+                            <p >Regia: " . $movie->director->getDirector() . "</p>
+
 
                             
 

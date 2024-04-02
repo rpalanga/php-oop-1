@@ -17,6 +17,10 @@ class Movie
         $this->description = $_description;
         // $this->playbill = $_playbill;
     }
+
+    public function maker(){
+        return $this->name;
+    }
 }
 
 $movie1 = new Movie("Ritorno al futuro", "Eng", "Marty McFly viaggia indietro nel tempo, sconvolgendo accidentalmente la sua stessa esistenza. Deve riparare il passato per garantirsi il futuro.");
@@ -61,7 +65,7 @@ $movies = [
                     echo "
                         <div class='card'>
                             <div class='card-body'>
-                            <h5 class='card-title'>" . $movie->name . "</h5>
+                            <h5 class='card-title'>" . $movie->maker() . "</h5>
                             <p class='card-text'>Lingua: " . $movie->language . "</p>
                             <p>" . $movie->description . "</p>
                             </div>

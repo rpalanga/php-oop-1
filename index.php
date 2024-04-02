@@ -56,14 +56,14 @@ $movies = [
 
 <body>
     <div class="contianer-fluid">
-        <h1 class="display-1 text-success-emphasis text-center my-5 ">Choose your Movie</h1>
-        <div class="container d-flex gap-2 ">
+        <h1 class="display-1 text-success-emphasis text-center my-5 link-underline-secondary  ">Choose your Movie</h1>
+        <div class="container d-flex gap-2 justify-content-center">
 
             
                 <?php
                 foreach ($movies as $movie) {
                     echo "
-                        <div class='card'>
+                        <div class='card w-100'>
                             <div class='card-body'>
                             <h5 class='card-title'>" . $movie->maker() . "</h5>
                             <p class='card-text'>Lingua: " . $movie->language . "</p>
